@@ -1,0 +1,141 @@
+/* Basic reset and layout */
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f4f8fc;
+}
+
+/* Fixed header and footer */
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 81px;
+  width: 100%;
+  background-color: #013281;
+  display: flex;
+  align-items: center;
+  padding-left: 20px;
+  z-index: 1000;
+}
+
+.footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  height: 51px;
+  width: 100%;
+  background-color: #013281;
+  color: white;
+  text-align: center;
+  line-height: 51px;
+  font-weight: 500;
+  z-index: 1000;
+}
+
+/* Logo box */
+.img-container {
+  display: flex;
+  align-items: center;
+  background-color: white;
+  padding: 6px 12px;
+  border-radius: 6px;
+  gap: 10px;
+}
+
+.img-container img {
+  height: 50px;
+  width: 50px;
+  object-fit: contain;
+}
+
+.img-container h1 {
+  font-size: 20px;
+  margin: 0;
+  color: #013281;
+  font-weight: bold;
+}
+
+/* App layout padding to allow fixed header/footer */
+.app-container {
+  padding-top: 81px;
+  padding-bottom: 51px;
+  min-height: 100vh;
+  box-sizing: border-box;
+}
+
+/* Centering the form */
+.main-content {
+  padding: 30px 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: calc(100vh - 132px); /* 81 + 51 */
+  box-sizing: border-box;
+}
+
+/* Full-width styled form */
+.form-container {
+  width: 100%;
+  max-width: 1000px;
+  background-color: white;
+  padding: 30px 40px;
+  border-radius: 10px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+.form-container h2 {
+  text-align: center;
+  color: #013281;
+  margin-bottom: 25px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+input,
+textarea,
+label {
+  margin-bottom: 15px;
+  padding: 12px;
+  font-size: 15px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  background-color: #fdfdfd;
+}
+
+input:focus,
+textarea:focus {
+  border-color: #013281;
+  outline: none;
+}
+
+textarea {
+  resize: vertical;
+}
+
+button {
+  background-color: #013281;
+  color: white;
+  padding: 14px;
+  font-size: 16px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+button:hover {
+  background-color: #054496;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .form-container {
+    padding: 20px;
+  }
+}
