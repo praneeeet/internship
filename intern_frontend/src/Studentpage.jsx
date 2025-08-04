@@ -1,4 +1,4 @@
-import './Studentpage.css';
+import './studentpage.css';
 import Profilecard from './Profilecard';
 import logo from './assets/logo1.webp';
 import Interncard from './Interncard';

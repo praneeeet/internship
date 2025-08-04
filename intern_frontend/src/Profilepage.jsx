@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import './ProfilePage.css'; // Unique CSS file
+import './Profilepage.css'; // Unique CSS file
 import axios from 'axios';
 import { Link, useNavigate } from 'react-router-dom';
 

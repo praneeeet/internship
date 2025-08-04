@@ -278,14 +278,14 @@ async getAdminOverview(@Req() req: Request) {
       throw new HttpException('Student not found', HttpStatus.NOT_FOUND);
     }
 
-    const submissionIds = student.submissions.map((s) => s.id);
-    const reviews = await this.reviewRepo
-      .createQueryBuilder('review')
-      .where('review.submission_id::uuid IN (:...ids)', { ids: submissionIds })
-      .leftJoinAndSelect('review.submission', 'submission')
-      .leftJoinAndSelect('review.staff', 'staff')
-      .getMany();
-    console.log('Fetched reviews with submissionIds:', submissionIds, 'Result:', reviews);
+      const submissionIds = student.submissions.map((s) => s.id);
+      const reviews = await this.reviewRepo
+        .createQueryBuilder('review')
+        .where('review.submission_id::uuid IN (:...ids)', { ids: submissionIds })
+        .leftJoinAndSelect('review.submission', 'submission')
+        .leftJoinAndSelect('review.staff', 'staff')
+        .getMany();
+      console.log('Fetched reviews with submissionIds:', submissionIds, 'Result:', reviews);
 
     const submissionsWithStatus = await Promise.all(
       student.submissions.map(async (submission) => {

@@ -4,7 +4,7 @@ import './index.css'
 import Studentpage from './Studentpage'
 import StaffPage from './staffPage'
 import Profilepage from './Profilepage'
-import Internpage from './Internpage'
+import Internpage from './internpage'
 import Login from './Login'
 import {createBrowserRouter,RouterProvider} from 'react-router-dom'
 import GoogleRedirectHandler from './GoogleRedirectHandler';

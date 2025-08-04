@@ -7,7 +7,7 @@ export class Review {
   @PrimaryGeneratedColumn('uuid')
   id: string;
 
-  @Column({ name: 'submission_id', type: 'uuid', nullable: true }) // Explicitly set to uuid
+  @Column({ name: 'submission_id', type: 'uuid', nullable: true }) 
   submissionId: string | null;
 
   @Column({ name: 'staffId', type: 'uuid', nullable: true })

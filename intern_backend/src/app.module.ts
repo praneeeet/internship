@@ -15,14 +15,15 @@ import {Department} from './entities/departments.entity'// Import AuthModule
   imports: [
     TypeOrmModule.forRoot({
       type: 'postgres',
-      host: 'localhost',
+      host: process.env.DATABASE_HOST || 'db', // <- use 'db' inside Docker
       port: 5432,
-      username: 'postgres',
-      password: '1234',
-      database: 'ims',
-      entities: [__dirname + '/**/*.entity{.ts,.js}'], // This will automatically include all entity files
-      synchronize: false, // Set to false in production and use migrations
+      username: process.env.DATABASE_USER || 'postgres',
+      password: process.env.DATABASE_PASSWORD || '1234', // <- your password
+      database: process.env.DATABASE_NAME || 'ims',
+      entities: [__dirname + '/**/*.entity{.ts,.js}'],
+      synchronize: true,  // keep false for safety in prod
     }),
+
     TypeOrmModule.forFeature([Staff, Student, Submission, Review,Class,Department]), // Entities for feature modules
     AuthModule, // Add AuthModule to enable auth routes
   ],

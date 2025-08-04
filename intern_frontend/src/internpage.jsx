@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import './Internpage.css';
+import './internpage.css';
 import logo from './assets/logo1.webp';
 import axios from 'axios';
 
